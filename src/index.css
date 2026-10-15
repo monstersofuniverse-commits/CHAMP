@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #080c0b;
+    color: #e4e4e7;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom glassy card shine & ambient glow */
+.glass-card {
+  background: rgba(18, 26, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover, .card-lift:hover {
+  border-color: rgba(0, 229, 153, 0.4);
+  box-shadow: 0 14px 34px -8px rgba(0, 229, 153, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Subtle button hover scale and green glow */
+.btn-hover-glow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-hover-glow:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 26px rgba(0, 229, 153, 0.42);
+}
+
+.btn-hover-secondary {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-hover-secondary:hover {
+  transform: scale(1.03);
+  border-color: rgba(0, 229, 153, 0.35);
+  box-shadow: 0 0 20px rgba(0, 229, 153, 0.18);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080c0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d2724;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e599;
+}
